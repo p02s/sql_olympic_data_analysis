@@ -20,7 +20,7 @@ where rank =1)  q1  inner join
 from athelete_events a inner join  atheletes e on a.athlete_id = e.id
 where medal = 'silver'
 group by team) q2 on q1.team = q2.t
---finding player wgo won max gold medals amongst players who only won gold medal
+--finding player who won max gold medals amongst players who only won gold medal
 select top 1 name,len(k)
 from
  (select name,STRING_AGG(medal,' ') as k
